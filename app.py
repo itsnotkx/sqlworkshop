@@ -5,6 +5,10 @@ import re
 import os
 from werkzeug.utils import secure_filename
 import threading
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
@@ -29,7 +33,7 @@ def init_connection_pool():
     try:
         connection_pool = pooling.MySQLConnectionPool(
             pool_name="workshop_pool",
-            pool_size=50,  # Support ~40 concurrent users
+            pool_size=32,  # Maximum allowed pool size
             pool_reset_session=True,
             host=app.config['MYSQL_HOST'],
             port=app.config['MYSQL_PORT'],

@@ -19,6 +19,10 @@ Environment Variables (optional):
 import mysql.connector
 import sys
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 def load_database(sql_file_path):
     """Load SQL script into MySQL database"""
@@ -78,7 +82,7 @@ def load_database(sql_file_path):
         
         # Get table count
         cursor.execute("SHOW TABLES")
-        tables = cursor.fetchall("create_insert.sql")
+        tables = cursor.fetchall()
         print("\nMySQL Configuration (via environment variables):")
         print("  MYSQL_HOST (default: localhost)")
         print("  MYSQL_PORT (default: 3306)")

@@ -337,8 +337,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>🗄️ SQL Workshop</h1>
-            <p>Execute SELECT queries on your database safely</p>
+            <h1>SQL Workshop</h1>
         </header>
 
         <div class="content">
@@ -360,13 +359,6 @@
                             <span id="queryLoading" style="display: none;"><div class="loading"></div></span>
                         </div>
                         <div id="queryAlert" class="alert"></div>
-
-                        <div class="example-queries">
-                            <h4>Quick Examples:</h4>
-                            <div class="example-query" onclick="setQuery(this.textContent)">SELECT * FROM table_name LIMIT 10;</div>
-                            <div class="example-query" onclick="setQuery(this.textContent)">SELECT COUNT(*) FROM table_name;</div>
-                            <div class="example-query" onclick="setQuery(this.textContent)">SELECT column1, column2 FROM table_name WHERE column1 = 'value';</div>
-                        </div>
                     </div>
                 </div>
             </div>
